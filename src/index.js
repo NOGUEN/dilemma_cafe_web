@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
-import App from './App';
-import SquareButton from './components/SqureButton'
+import NavigationBar from './components/NavigationBar';
+import DilemmaListCell from './components/DilemmaListCell'
 import reportWebVitals from './reportWebVitals';
 import ButtonContainer from './components/SquareButtonContainer';
 
@@ -16,7 +16,12 @@ const MyVectorImage = () => (
 
 root.render(
   <React.StrictMode>
+    <NavigationBar></NavigationBar>
     <ButtonContainer></ButtonContainer>
+    <div>
+      <DilemmaListCell titleText={"hello"} likeCount={100}></DilemmaListCell>
+    </div>
+    
   </React.StrictMode>
 );
 

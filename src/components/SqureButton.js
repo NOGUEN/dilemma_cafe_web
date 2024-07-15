@@ -17,10 +17,11 @@ const StyledSquareButton = styled.button`
 
 const TopLeftText = styled.div`
   position: absolute;
-  top: 6px;
-  color: ${theme.color.darkgray};
-
-  left: 12px;
+  top: 12px;
+  left: 18px;
+  color: black;
+  font-family: "JalnanGothic";
+  font-size: 20px;
 `;
 
 const BottomRightImage = styled.div`
