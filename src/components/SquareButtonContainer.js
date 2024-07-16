@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import SquareButton from "./SqureButton.js";
 
 const StyledButtonContainer = styled.div`
@@ -7,13 +7,15 @@ const StyledButtonContainer = styled.div`
   justify-content: left;
   align-items: left;
   gap: 16px;
+  margin: 20px 0px 0px 20px;
 `;
 
-function ButtonContainer() {
+function ButtonContainer({ data }) {
   return (
     <StyledButtonContainer>
-      <SquareButton text={"오늘 랜덤 딜레마"}></SquareButton>
-      <SquareButton text={"전체 딜레마"}></SquareButton>
+      {data.map((item, index) => (
+        <SquareButton key={index} text={item.text} image={item.image} onClick={item.onClick} />
+      ))}
     </StyledButtonContainer>
   );
 }

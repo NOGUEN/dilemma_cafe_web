@@ -1,40 +1,40 @@
 import React from "react";
-import styled, { css } from "styled-components";
-import { theme } from "./ui/theme.js";
+import styled from "styled-components";
+import { theme } from "./ui/Theme.js";
 
 const StyledSquareButton = styled.button`
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   display: flex;
-  padding: 6px 12px;
+  flex-direction: column;
+  padding: 12px 18px;
   border-radius: 8px;
-  font-size: 1rem;
-  line-height: 1.5;
+
   border: none;
+  font-size: inherit;
   background-color: ${theme.color.primary};
   position: relative;
 `;
 
-const TopLeftText = styled.div`
-  position: absolute;
-  top: 12px;
-  left: 18px;
+const StyledTopLeftText = styled.div`
   color: black;
   font-family: "JalnanGothic";
-  font-size: 20px;
+  font-size: 1rem;
+  word-break: keep-all;
+  text-align: left;
 `;
 
-const BottomRightImage = styled.div`
+const StyledBottomRightImage = styled.div`
   position: absolute;
   bottom: 6px;
   right: 12px;
 `;
 
-function SquareButton({ text, image, ...props }) {
+function SquareButton({ text, image, onClick }) {
   return (
-    <StyledSquareButton {...props}>
-      <TopLeftText>{text}</TopLeftText>
-      <BottomRightImage>{image}</BottomRightImage>
+    <StyledSquareButton onClick={onClick}>
+      <StyledTopLeftText>{text}</StyledTopLeftText>
+      <StyledBottomRightImage>{image}</StyledBottomRightImage>
     </StyledSquareButton>
   );
 }

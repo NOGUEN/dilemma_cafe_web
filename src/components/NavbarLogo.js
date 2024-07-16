@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { theme } from "./ui/theme";
+import { theme } from "./ui/Theme";
 
 const StyledNavbarLogo = styled.div`
   display: flex;
   font-family: "JalnanGothic";
-  font-size: 24px;
+  font-size: 1.6rem;
   color: ${theme.color.primary};
   margin: 15px 0px 10px 20px;
 `;

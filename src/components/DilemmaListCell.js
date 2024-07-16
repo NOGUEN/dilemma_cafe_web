@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { theme } from "./ui/theme";
+import { theme } from "./ui/Theme";
 
 const StyledListCell = styled.button`
   background: ${theme.color.darkgray};

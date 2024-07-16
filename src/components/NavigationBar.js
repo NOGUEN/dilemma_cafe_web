@@ -1,6 +1,6 @@
 import React from "react";
-import styled, { css } from "styled-components";
-import { theme } from "./ui/theme.js";
+import styled from "styled-components";
+import { theme } from "./ui/Theme.js";
 import NavbarLogo from "./NavbarLogo.js";
 
 const StyledWrap = styled.div`
@@ -32,13 +32,13 @@ const StyledListCell = styled.li`
 `;
 
 const StyledListWrap = styled.div`
-  
   margin-left: auto;
 `;
 
 const StyledAnchor = styled.a`
   text-decoration: none;
   font-family: "JalnanGothic";
+  font-size: 1rem;
 `;
 
 function NavigationBar() {
