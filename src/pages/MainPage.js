@@ -14,7 +14,7 @@ function MainPage() {
     <>
       <NavigationBar></NavigationBar>
       <ButtonContainer data={buttonsData}></ButtonContainer>
-      <DilemmaListCell titleText={"hello"} likeCount={100}></DilemmaListCell>
+      <DilemmaListCell titleText={"hello"} likeCount={100} participationCount={100}></DilemmaListCell>
     </>
   );
 }
