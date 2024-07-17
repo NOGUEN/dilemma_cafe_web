@@ -1,6 +1,6 @@
 <div style="text-align: center;">
   <a href="https://noguen.com">
-    <img src="https://img1.daumcdn.net/thumb/R750x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb2q5od%2FbtsFE25elFi%2FIcaGrehTHEzcI1BZzMOWH1%2Fimg.png" alt="NOGUEN BLOG REACT" style="width: 80%;">
+    <img src="https://img1.daumcdn.net/thumb/R750x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb2q5od%2FbtsFE25elFi%2FIcaGrehTHEzcI1BZzMOWH1%2Fimg.png" alt="NOGUEN BLOG REACT" style="width: 100%;">
   </a>
   <p style="font-style: italic;">NOGUEN BLOG</p>
 </div>
