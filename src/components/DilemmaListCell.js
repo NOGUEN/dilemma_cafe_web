@@ -19,13 +19,12 @@ const StyledLike = styled.div`
 `;
 
 const StyledParticipations = styled.div`
-  margin-left: auto;
   color: ${theme.color.lightgray};
 `;
 
 const StyledInfoWrapper = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-end;
   margin-top: 5px;
   width: 100%;

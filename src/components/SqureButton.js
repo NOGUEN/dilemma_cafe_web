@@ -9,7 +9,6 @@ const StyledSquareButton = styled.button`
   flex-direction: column;
   padding: 12px 18px;
   border-radius: 8px;
-
   border: none;
   font-size: inherit;
   background-color: ${theme.color.primary};
