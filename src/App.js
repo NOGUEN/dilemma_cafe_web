@@ -5,8 +5,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {RoutePaths.map((item) => (
-          <Route path={item.href} element={item.page}/>
+        {RoutePaths.map((item, index) => (
+          <Route key={index} path={item.href} element={item.page}/>
         ))}
       </Routes>
     </BrowserRouter>

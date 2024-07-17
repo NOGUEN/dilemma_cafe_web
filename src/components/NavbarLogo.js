@@ -1,25 +1,33 @@
 import styled from "styled-components";
 import { theme } from "./ui/Theme";
+import { useNavigate } from "react-router-dom";
 
 const StyledNavbarLogo = styled.div`
   display: flex;
-  font-family: "JalnanGothic";
-  font-size: 1.6rem;
   color: ${theme.color.primary};
   margin: 15px 0px 10px 20px;
 `;
 
-const StyledLogoAnchor = styled.a`
-  text-decoration: none;
+const StyledLogoButton = styled.button`
+  font-family: "JalnanGothic";
+  background-color: transparent;
+  font-size: 1.6rem;
   color: inherit;
+  border: none;
+  &:hover {
+    color: white;
+    transition: 0.5s;
+  }
 `
 
 function NavbarLogo() {
+  const navigate = useNavigate();
+
   return (
     <StyledNavbarLogo>
-      <StyledLogoAnchor href="#home">
+      <StyledLogoButton onClick={()=>{navigate("/")}}>
         딜레마 카페
-      </StyledLogoAnchor>
+      </StyledLogoButton>
     </StyledNavbarLogo>
   );
 }

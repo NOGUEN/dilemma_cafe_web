@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { theme } from "./ui/Theme.js";
+import { useNavigate } from "react-router-dom";
 import NavbarLogo from "./NavbarLogo.js";
 
 const StyledWrap = styled.div`
@@ -36,13 +37,17 @@ const StyledListWrap = styled.div`
   margin-left: auto;
 `;
 
-const StyledAnchor = styled.a`
+const StyledButton = styled.button`
   text-decoration: none;
   font-family: "JalnanGothic";
   font-size: 1rem;
+  background-color: transparent;
+  border: none;
 `;
 
 function NavigationBar({data}) {
+  const navigate = useNavigate();
+
   return (
     <StyledWrap>
       <StyledNavigationBar>
@@ -50,8 +55,8 @@ function NavigationBar({data}) {
         <StyledListWrap>
           <ul>
             {data.map((item, index) => (
-              <StyledListCell key={index}>
-                <StyledAnchor href={item.href}>{item.titleText}</StyledAnchor>
+              <StyledListCell key={index} onClick={() => {navigate(item.href)}}>
+                <StyledButton>{item.titleText}</StyledButton>
               </StyledListCell>
             ))}
           </ul>

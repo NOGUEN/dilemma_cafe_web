@@ -3,6 +3,7 @@ import ButtonContainer from "../components/SquareButtonContainer";
 import DilemmaList from "../components/DilemmaList";
 import { ReactComponent as DilemmaIcon } from "../assets/dilemma_icon.svg";
 import { ReactComponent as DilemmaListIcon } from "../assets/dilemma_list_icon.svg";
+import getNavBarData from "../constants/NavBarData";
 
 const buttonsData = [
   { text: "오늘의 랜덤 딜레마", image: <DilemmaIcon width={48} height={48}></DilemmaIcon>, onClick: () => alert('오늘의 랜덤 딜레마 클릭!') },
@@ -17,16 +18,11 @@ const listData = [
   {titleText: "송강호 떡 사주기 VS 송강 호떡 사주기", likeCount: 100, participationCount: 200},
 ];
 
-const navBarData = [
-  {titleText: "가이드", href: "#guide"},
-  {titleText: "문의", href: "#faq"},
-  {titleText: "회원가입/로그인", href: "#login"},
-]
-
 function MainPage() {
+  
   return (
     <>
-      <NavigationBar data={navBarData}></NavigationBar>
+      <NavigationBar data={getNavBarData()}></NavigationBar>
       <ButtonContainer data={buttonsData}></ButtonContainer>
       <DilemmaList data={listData}></DilemmaList>
     </>
