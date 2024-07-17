@@ -7,7 +7,7 @@ const StyledButtonContainer = styled.div`
   justify-content: left;
   align-items: left;
   gap: 16px;
-  margin: 20px 0px 0px 20px;
+  margin-right: 1rem;
 `;
 
 function ButtonContainer({ data }) {
