@@ -7,6 +7,7 @@ const StyledListCell = styled.button`
   border: none;
   align-items: flex-end;
   width: 100%;
+  margin-bottom: 10px;
 `;
 
 const StyledTitle = styled.div`

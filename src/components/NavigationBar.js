@@ -4,7 +4,8 @@ import { theme } from "./ui/Theme.js";
 import NavbarLogo from "./NavbarLogo.js";
 
 const StyledWrap = styled.div`
-  margin-top: 60px;
+  margin: 0;
+  padding-top: 60px;
 `;
 
 const StyledNavigationBar = styled.div`
@@ -12,9 +13,10 @@ const StyledNavigationBar = styled.div`
   display: flex;
   z-index: 2000;
   position: fixed;
+  left: 0;
+  right: 0;
   top: 0px;
   background: ${theme.color.background};
-  gap: 16px;
 `;
 
 const StyledListCell = styled.li`
@@ -41,16 +43,18 @@ const StyledAnchor = styled.a`
   font-size: 1rem;
 `;
 
-function NavigationBar() {
+function NavigationBar({data}) {
   return (
     <StyledWrap>
       <StyledNavigationBar>
-        <NavbarLogo></NavbarLogo>
+        <NavbarLogo />
         <StyledListWrap>
           <ul>
-            <StyledListCell><StyledAnchor href="#hello">가이드</StyledAnchor></StyledListCell>
-            <StyledListCell><StyledAnchor href="#hello">문의</StyledAnchor></StyledListCell>
-            <StyledListCell><StyledAnchor href="#hello">회원가입/로그인</StyledAnchor></StyledListCell>
+            {data.map((item, index) => (
+              <StyledListCell key={index}>
+                <StyledAnchor href={item.href}>{item.titleText}</StyledAnchor>
+              </StyledListCell>
+            ))}
           </ul>
         </StyledListWrap>
       </StyledNavigationBar>
