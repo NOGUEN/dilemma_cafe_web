@@ -14,7 +14,6 @@ const StyledNavigationBar = styled.div`
   z-index: 2000;
   position: fixed;
   left: 0;
-  right: 0;
   top: 0px;
   background: ${theme.color.background};
 `;

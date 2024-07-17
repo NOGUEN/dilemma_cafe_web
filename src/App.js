@@ -1,12 +1,13 @@
-import MainPage from "./pages/MainPage";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import GlobalStyle from "./components/ui/GlobalStyle"
+import RoutePaths from "./constants/RoutePaths";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MainPage />}/>
+        {RoutePaths.map((item) => (
+          <Route path={item.href} element={item.page}/>
+        ))}
       </Routes>
     </BrowserRouter>
   );
