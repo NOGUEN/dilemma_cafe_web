@@ -11,3 +11,5 @@
 - [4편: Styled-Component로 Component 만들기](https://noguen.tistory.com/300)
 
 - [5편: Component 이어서 만들기와 고민 해결](https://noguen.tistory.com/301)
+
+- [6편: Stateless하기 만들기, 페이지 만들기, 그리고 Map 활용](https://noguen.tistory.com/302)
