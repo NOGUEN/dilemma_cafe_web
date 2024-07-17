@@ -48,3 +48,10 @@
     <span style="font-size: 20px;">6편: Stateless하기 만들기, 페이지 만들기, 그리고 Map 활용</span>
   </a>
 </div>
+
+<div style="display: flex; align-items: flex-start;">
+  <a href="https://noguen.tistory.com/303" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+    <img src="https://github.com/user-attachments/assets/30be571c-abb5-499b-8058-e20a4b1406c1" alt="NOGUEN BLOG REACT" style="width: 50px; margin-right: 10px;">
+    <span style="font-size: 20px;">6편: Stateless하기 만들기, 페이지 만들기, 그리고 Map 활용</span>
+  </a>
+</div>
