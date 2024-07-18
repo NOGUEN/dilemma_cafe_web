@@ -12,16 +12,16 @@ const StyledListCell = styled.button`
 `;
 
 const StyledTitle = styled.div`
-  font-family: "JalnanGothic";
-  color: white;
+  ${theme.fontstyle.subhead2}
+  color: ${theme.color.white};
 `;
 
 const StyledLike = styled.div`
-  color: ${theme.color.lightgray};
+  color: ${theme.color.gray200};
 `;
 
 const StyledParticipations = styled.div`
-  color: ${theme.color.lightgray};
+  color: ${theme.color.gray200};
 `;
 
 const StyledInfoWrapper = styled.div`

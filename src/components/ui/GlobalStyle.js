@@ -8,10 +8,17 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
   }
 
-  html, body {
+  @font-face {
+    font-family: 'Pretendard';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+  html {
     margin: 0;
     padding: 0;
-    font-size: 16px;
+    font-size: 62.5%;
   }
 
   body {

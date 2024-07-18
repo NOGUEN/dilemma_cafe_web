@@ -10,10 +10,9 @@ const StyledLoginButton = styled.button`
   background-color: transparent;
   border: none;
   color: ${theme.color.primary};
-  padding-right: 1rem;
-  font-size: 1rem;
+  padding-right: ${theme.space.spaceLg};
+  ${theme.fontstyle.subhead3}
   cursor: pointer;
-  font-family: "JalnanGothic";
 `;
 
 const StyledModalBackground = styled.div`
@@ -30,15 +29,15 @@ const StyledModalBackground = styled.div`
 
 const StyledModalContainer = styled.div`
   position: relative;
-  padding: 2rem 3rem;
+  padding: ${theme.space.space2Xl} ${theme.space.space3Xl};
   background-color: ${theme.color.darkgray};
-  border-radius: 8px;
+  border-radius: ${theme.radius.radiusMd};
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 `;
 
 const StyledText= styled.div`
-  font-size: 0.9rem;
-  color: ${theme.color.lightgray};
+  ${theme.fontstyle.body1Regular}
+  color: ${theme.color.gray400};
 `;
 
 const StyledWrapper = styled.div`
@@ -50,8 +49,8 @@ const StyledWrapper = styled.div`
 `;
 
 const StyledDivisionLine = styled.div`
-  border-top: 1px solid ${theme.color.gray};
-  margin: 2rem;
+  border-top: 0.5px solid ${theme.color.gray400};
+  margin: ${theme.space.spaceLg};
   flex-grow: 1;
 `;
 
@@ -63,12 +62,12 @@ const StyledDivisionWrapper = styled.div`
 
 const StyledCloseButton = styled.div`
   position: absolute;
-  top: 0.1rem;
-  right: 0.7rem;
+  top: ${theme.space.spaceXs};
+  right: ${theme.space.spaceMd};
   background: none;
   border: none;
-  color: ${theme.color.gray};
-  font-size: 2rem;
+  color: ${theme.color.gray400};
+  ${theme.fontstyle.body3Regular}
   cursor: pointer;
 ;`
 

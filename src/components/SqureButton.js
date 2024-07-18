@@ -10,7 +10,6 @@ const StyledSquareButton = styled.button`
   padding: 12px 18px;
   border-radius: 8px;
   border: none;
-  font-size: inherit;
   background-color: ${theme.color.primary};
   position: relative;
   cursor: pointer;
@@ -18,8 +17,7 @@ const StyledSquareButton = styled.button`
 
 const StyledTopLeftText = styled.div`
   color: black;
-  font-family: "JalnanGothic";
-  font-size: 1rem;
+  ${theme.fontstyle.display}
   word-break: keep-all;
   text-align: left;
 `;
