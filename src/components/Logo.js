@@ -4,26 +4,24 @@ import { ReactComponent as DilemmaIcon } from "../assets/dilemma_icon.svg";
 
 
 const StyledLogo = styled.div`
-  font-size: ${props => props.size || '1rem'};
+  font-size: 1.3rem;
   font-family: "JalnanGothic";
   color: ${theme.color.primary};
 `;
 
 const StyledWrapper = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  white-space: nowrap;
+  gap: 1rem;
 `;
 
 function Logo({ size }) {
   return (
     <StyledWrapper>
-      
-      <DilemmaIcon height={"8rem"} stroke={theme.color.primary}></DilemmaIcon>
-      
-      <StyledLogo size={size}>딜레마 카페</StyledLogo>
+      <DilemmaIcon height={"1.8rem"} stroke={theme.color.primary}></DilemmaIcon>
+      <StyledLogo>딜레마 카페</StyledLogo>
     </StyledWrapper>
   );
 }

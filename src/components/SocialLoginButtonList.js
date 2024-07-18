@@ -3,6 +3,7 @@ import SocialLoginButton from "./SocialLoginButton";
 
 const StyledSocialLoginButtonList = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 1rem;
 `;
 
@@ -12,8 +13,10 @@ function SocialLoginButtonList({ data }) {
       {data.map((item, index) => (
       <SocialLoginButton 
         key={index}
+        title={item.title}
         color={item.color}
         icon={item.icon}
+        size={item.size}
         onClick={item.onClick}>
       </SocialLoginButton>
       ))}

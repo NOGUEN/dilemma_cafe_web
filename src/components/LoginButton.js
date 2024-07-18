@@ -29,6 +29,7 @@ const StyledModalBackground = styled.div`
 `;
 
 const StyledModalContainer = styled.div`
+  position: relative;
   padding: 2rem 3rem;
   background-color: ${theme.color.darkgray};
   border-radius: 8px;
@@ -60,6 +61,17 @@ const StyledDivisionWrapper = styled.div`
   width: 100%;
 `;
 
+const StyledCloseButton = styled.div`
+  position: absolute;
+  top: 0.1rem;
+  right: 0.7rem;
+  background: none;
+  border: none;
+  color: ${theme.color.gray};
+  font-size: 2rem;
+  cursor: pointer;
+;`
+
 function LoginButton() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -72,9 +84,9 @@ function LoginButton() {
   };
 
   const SocialLoginButtonData = [
-    {color: theme.color.kakao, icon: KakaoIcon, onClick: ()=>{}},
-    {color: theme.color.white, icon: GoogleIcon, onClick: ()=>{}},
-    {color: theme.color.black, icon: KakaoIcon, onClick: ()=>{}},
+    {title: "카카오로 로그인", size: "1.4rem", color: theme.color.kakao, icon: KakaoIcon, onClick: ()=>{}},
+    {title: "구글로 로그인", size: "1.4rem", color: theme.color.white, icon: GoogleIcon, onClick: ()=>{}},
+    {title: "카카오로 로그인", size: "1.4rem", color: theme.color.black, icon: KakaoIcon, onClick: ()=>{}},
   ]
 
   return (
@@ -84,6 +96,7 @@ function LoginButton() {
         <StyledModalBackground onClick={closeModal}>
           <StyledModalContainer onClick={(e) => e.stopPropagation()}>
             <StyledWrapper>
+              <StyledCloseButton onClick={closeModal}>×</StyledCloseButton>
               <Logo size={"3rem"}></Logo>
               <StyledDivisionWrapper>
                 <StyledDivisionLine></StyledDivisionLine>
