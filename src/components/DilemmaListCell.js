@@ -8,6 +8,7 @@ const StyledListCell = styled.button`
   align-items: flex-end;
   width: 100%;
   margin-bottom: 10px;
+  cursor: pointer;
 `;
 
 const StyledTitle = styled.div`

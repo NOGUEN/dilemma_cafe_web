@@ -13,6 +13,7 @@ const StyledSquareButton = styled.button`
   font-size: inherit;
   background-color: ${theme.color.primary};
   position: relative;
+  cursor: pointer;
 `;
 
 const StyledTopLeftText = styled.div`

@@ -14,6 +14,7 @@ const StyledLogoButton = styled.button`
   font-size: 1.6rem;
   color: inherit;
   border: none;
+  cursor: pointer;
   &:hover {
     color: white;
     transition: 0.5s;
