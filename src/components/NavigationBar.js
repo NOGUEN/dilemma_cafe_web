@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { theme } from "./ui/Theme.js";
 import { useNavigate } from "react-router-dom";
 import NavbarLogo from "./NavbarLogo.js";
+import LoginButton from "./LoginButton.js";
 
 const StyledWrap = styled.div`
   margin: 0;
@@ -34,6 +35,7 @@ const StyledListCell = styled.li`
 `;
 
 const StyledListWrap = styled.div`
+  display: flex;
   margin-left: auto;
 `;
 
@@ -54,11 +56,7 @@ function NavigationBar({data}) {
         <NavbarLogo />
         <StyledListWrap>
           <ul>
-            {data.map((item, index) => (
-              <StyledListCell key={index} onClick={() => {navigate(item.href)}}>
-                <StyledButton>{item.titleText}</StyledButton>
-              </StyledListCell>
-            ))}
+            <LoginButton></LoginButton>
           </ul>
         </StyledListWrap>
       </StyledNavigationBar>

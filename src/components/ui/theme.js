@@ -5,6 +5,9 @@ export const theme = {
     darkgray: "#2F2F2F",
     gray: "#5B5B5B",
     lightgray: "#ACACAC",
+    kakao: "#FFE500",
+    white: "#FFFFFF",
+    black: "#000000",
   },
   page: {
     maxWidth: "1000px",
