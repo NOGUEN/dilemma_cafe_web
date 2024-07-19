@@ -3,11 +3,11 @@ import { theme } from "./ui/Theme";
 
 const StyledListCell = styled.button`
   background: ${theme.color.darkgray};
-  border-radius: 8px;
+  border-radius: ${theme.radius.radiusMd};
+  margin-bottom: ${theme.space.spaceMd};
   border: none;
   align-items: flex-end;
   width: 100%;
-  margin-bottom: 10px;
   cursor: pointer;
 `;
 
@@ -25,18 +25,19 @@ const StyledParticipations = styled.div`
 `;
 
 const StyledInfoWrapper = styled.div`
+  margin-top: ${theme.space.spaceSm};
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-top: 5px;
   width: 100%;
 `;
 
 const StyledWrapper = styled.div`
+  padding: ${theme.space.spaceLg} ${theme.space.spaceLg} ${theme.space.spaceMd} ${theme.space.spaceLg};
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding: 15px 15px 10px 15px;
+  
 `;
 
 function TitleText({titleText}) {

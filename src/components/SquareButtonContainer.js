@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import SquareButton from "./SqureButton.js";
+import { theme } from "./ui/Theme.js";
 
 const StyledButtonContainer = styled.div`
+  gap: ${theme.space.spaceLg};
   display: flex;
   justify-content: left;
   align-items: left;
-  gap: 16px;
-  margin-right: 1rem;
 `;
 
 function ButtonContainer({ data }) {

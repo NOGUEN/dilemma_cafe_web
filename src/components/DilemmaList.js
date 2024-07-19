@@ -5,7 +5,7 @@ import { theme } from "./ui/Theme";
 const StyledTitle = styled.div`
   color: white;
   ${theme.fontstyle.subhead3}
-  margin: ${theme.space.spaceLg} 0;
+  margin: ${theme.space.spaceLg} ${theme.space.spaceZero};
 `;
 
 function DilemmaList ({data}) {

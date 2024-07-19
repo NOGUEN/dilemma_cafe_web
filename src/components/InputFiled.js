@@ -7,7 +7,7 @@ const StyledLoginInputField = styled.input`
   background-color: ${theme.color.darkgray};
 
   &:focus {
-    border: 2px solid ${theme.color.primary};
+    border: ${theme.space.spaceXs} solid ${theme.color.primary};
     outline: none;
   }
 `;

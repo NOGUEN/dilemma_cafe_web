@@ -2,37 +2,37 @@ import styled from "styled-components";
 import { theme } from "./ui/Theme";
 
 const StyledSocialLoginButton = styled.button`
+  background-color: ${props => props.color || theme.color.primary};
+  border-radius: ${theme.radius.radiusSm};
+  padding: ${theme.space.spaceSm};
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 250px;
-  background-color: ${props => props.color || theme.color.primary};
   border: none;
-  border-radius: 4px;
   cursor: pointer;
-  padding: 0.6rem;
 `;
 
 const StyledSocialLogo = styled.div`
+  left: ${theme.space.spaceSm};
+  height: ${theme.icon.iconMd};
+  width: ${theme.icon.iconMd};
   position: absolute;
-  left: 0.6rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: ${props => props.size || '1.4rem'};
-  width: ${props => props.size || '1.4rem'};
 `;
 
 const StyledButtonTitle = styled.div`
-  font-size: 0.9rem;
+  ${theme.fontstyle.body1Medium}
   white-space: nowrap;
 `;
 
-function SocialLoginButton({ title, size, color, onClick, icon: Icon }) {
+function SocialLoginButton({ title, color, onClick, icon: Icon }) {
   return (
     <StyledSocialLoginButton onClick={onClick} color={color}>
-      <StyledSocialLogo size={size}>
+      <StyledSocialLogo>
         <Icon />
       </StyledSocialLogo>
       <StyledButtonTitle>{title}</StyledButtonTitle>

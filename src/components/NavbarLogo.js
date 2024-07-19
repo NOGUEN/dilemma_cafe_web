@@ -5,18 +5,17 @@ import { useNavigate } from "react-router-dom";
 const StyledNavbarLogo = styled.div`
   display: flex;
   color: ${theme.color.primary};
-  margin: 15px 0px 10px 20px;
+  margin: ${theme.space.spaceXl} 0px 10px 20px;
 `;
 
 const StyledLogoButton = styled.button`
-  font-family: "JalnanGothic";
   background-color: transparent;
-  font-size: 1.6rem;
+  ${theme.fontstyle.display};
   color: inherit;
   border: none;
   cursor: pointer;
   &:hover {
-    color: white;
+    color: ${theme.color.white};
     transition: 0.5s;
   }
 `

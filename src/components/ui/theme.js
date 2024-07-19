@@ -18,6 +18,7 @@ export const theme = {
     kakao: "#FFE500",
     white: "#FFFFFF",
     black: "#000000",
+    transparent: "transparent",
   },
   fontstyle: {
     display: "font-size: 1.8rem; font-family: \"JalnanGothic\";",
@@ -47,6 +48,7 @@ export const theme = {
     spaceMd: "1rem",
     spaceSm: "0.5rem",
     spaceXs: "0.2rem",
+    spaceZero: "0rem",
   },
   radius: {
     radius3Xl: "2rem",
@@ -56,6 +58,13 @@ export const theme = {
     radiusMd: "0.6rem",
     radiusSm: "0.4rem",
     radiusxs: "0.2rem",
+  },
+  icon: {
+    icon2Xl: "4.8rem",
+    iconXl: "3.6rem",
+    iconLg: "2.4rem",
+    iconMd: "1.6rem",
+    iconSm: "1.2rem",
   },
   device: {
     wide: "only screen and (min-width: 1920px)",

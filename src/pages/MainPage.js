@@ -4,10 +4,15 @@ import DilemmaList from "../components/DilemmaList";
 import { ReactComponent as DilemmaIcon } from "../assets/dilemma_icon.svg";
 import { ReactComponent as DilemmaListIcon } from "../assets/dilemma_list_icon.svg";
 import getNavBarData from "../constants/NavBarData";
+import { theme } from "../components/ui/Theme";
 
 const buttonsData = [
-  { text: "오늘의 랜덤 딜레마", image: <DilemmaIcon width={48} height={48}></DilemmaIcon>, onClick: () => alert('오늘의 랜덤 딜레마 클릭!') },
-  { text: "전체 딜레마", image: <DilemmaListIcon width={48} height={48}></DilemmaListIcon>, onClick: () => alert('전체 딜레마 클릭!') },
+  { text: "오늘의 랜덤 딜레마",
+    image: <DilemmaIcon width={theme.icon.icon2Xl} height={theme.icon.icon2Xl}></DilemmaIcon>,
+    onClick: () => alert('오늘의 랜덤 딜레마 클릭!') },
+  { text: "전체 딜레마",
+    image: <DilemmaListIcon width={theme.icon.icon2Xl} height={theme.icon.icon2Xl}></DilemmaListIcon>,
+    onClick: () => alert('전체 딜레마 클릭!') },
 ];
 
 const listData = [
@@ -19,7 +24,6 @@ const listData = [
 ];
 
 function MainPage() {
-  
   return (
     <>
       <NavigationBar data={getNavBarData()}></NavigationBar>

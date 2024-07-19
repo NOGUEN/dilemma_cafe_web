@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import SocialLoginButton from "./SocialLoginButton";
+import { theme } from "./ui/Theme";
 
 const StyledSocialLoginButtonList = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: ${theme.space.spaceLg};
 `;
 
 function SocialLoginButtonList({ data }) {
@@ -16,7 +17,6 @@ function SocialLoginButtonList({ data }) {
         title={item.title}
         color={item.color}
         icon={item.icon}
-        size={item.size}
         onClick={item.onClick}>
       </SocialLoginButton>
       ))}

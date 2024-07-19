@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { theme } from "./ui/Theme.js";
-import { useNavigate } from "react-router-dom";
 import NavbarLogo from "./NavbarLogo.js";
 import LoginButton from "./LoginButton.js";
 
@@ -37,6 +36,7 @@ const StyledListCell = styled.li`
 const StyledListWrap = styled.div`
   display: flex;
   margin-left: auto;
+  align-items: center;
 `;
 
 const StyledButton = styled.button`
@@ -48,8 +48,6 @@ const StyledButton = styled.button`
 `;
 
 function NavigationBar({data}) {
-  const navigate = useNavigate();
-
   return (
     <StyledWrap>
       <StyledNavigationBar>

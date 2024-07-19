@@ -1,18 +1,23 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import React, { useState } from 'react';
-import { theme } from "./ui/Theme";
-import Logo from "./Logo";
 import SocialLoginButtonList from "./SocialLoginButtonList";
+import { theme } from "./ui/Theme";
+import { ReactComponent as DilemmaIcon } from "../assets/dilemma_icon.svg";
 import { ReactComponent as KakaoIcon } from "../assets/kakaotalk.svg";
 import { ReactComponent as GoogleIcon } from "../assets/google.svg";
 
 const StyledLoginButton = styled.button`
-  background-color: transparent;
-  border: none;
+  background-color: ${theme.color.transparent};
   color: ${theme.color.primary};
   padding-right: ${theme.space.spaceLg};
   ${theme.fontstyle.subhead3}
+  border: none;
   cursor: pointer;
+
+  &:hover {
+    color: ${theme.color.white};
+    transition: 0.5s;
+  }
 `;
 
 const StyledModalBackground = styled.div`
@@ -28,11 +33,17 @@ const StyledModalBackground = styled.div`
 `;
 
 const StyledModalContainer = styled.div`
-  position: relative;
   padding: ${theme.space.space2Xl} ${theme.space.space3Xl};
   background-color: ${theme.color.darkgray};
   border-radius: ${theme.radius.radiusMd};
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  
+`;
+
+const StyledLogo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const StyledText= styled.div`
@@ -41,11 +52,12 @@ const StyledText= styled.div`
 `;
 
 const StyledWrapper = styled.div`
+  gap: ${theme.space.spaceLg};
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  
 `;
 
 const StyledDivisionLine = styled.div`
@@ -61,13 +73,13 @@ const StyledDivisionWrapper = styled.div`
 `;
 
 const StyledCloseButton = styled.div`
-  position: absolute;
+  font-size: ${theme.icon.iconLg};
   top: ${theme.space.spaceXs};
   right: ${theme.space.spaceMd};
+  color: ${theme.color.gray400};
+  position: absolute;
   background: none;
   border: none;
-  color: ${theme.color.gray400};
-  ${theme.fontstyle.body3Regular}
   cursor: pointer;
 ;`
 
@@ -83,9 +95,9 @@ function LoginButton() {
   };
 
   const SocialLoginButtonData = [
-    {title: "카카오로 로그인", size: "1.4rem", color: theme.color.kakao, icon: KakaoIcon, onClick: ()=>{}},
-    {title: "구글로 로그인", size: "1.4rem", color: theme.color.white, icon: GoogleIcon, onClick: ()=>{}},
-    {title: "카카오로 로그인", size: "1.4rem", color: theme.color.black, icon: KakaoIcon, onClick: ()=>{}},
+    {title: "카카오로 로그인", color: theme.color.kakao, icon: KakaoIcon, onClick: ()=>{}},
+    {title: "구글로 로그인", color: theme.color.white, icon: GoogleIcon, onClick: ()=>{}},
+    {title: "애플로 로그인", color: theme.color.black, textColor: theme.color.white, icon: KakaoIcon, onClick: ()=>{}},
   ]
 
   return (
@@ -96,7 +108,9 @@ function LoginButton() {
           <StyledModalContainer onClick={(e) => e.stopPropagation()}>
             <StyledWrapper>
               <StyledCloseButton onClick={closeModal}>×</StyledCloseButton>
-              <Logo size={"3rem"}></Logo>
+              <StyledLogo>
+                <DilemmaIcon stroke={theme.color.primary} height={theme.icon.iconXl}/>
+              </StyledLogo>
               <StyledDivisionWrapper>
                 <StyledDivisionLine></StyledDivisionLine>
                 <StyledText>소셜 로그인</StyledText>
