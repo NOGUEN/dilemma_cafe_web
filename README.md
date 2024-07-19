@@ -6,6 +6,8 @@
 
 
 # 개발기와 함께하는 React 개발
+
+## 초반 : 학습
 <div style="display: flex; align-items: flex-start;">
   <a href="https://noguen.tistory.com/295" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
     <img src="https://github.com/user-attachments/assets/30be571c-abb5-499b-8058-e20a4b1406c1" alt="NOGUEN BLOG REACT" style="width: 50px; margin-right: 10px;">
@@ -61,3 +63,14 @@
     <span style="font-size: 20px;">8편: Login 모달, 그리고 전체 점검의 필요성</span>
   </a>
 </div>
+
+<div style="display: flex; align-items: flex-start;">
+  <a href="https://noguen.tistory.com/305" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+    <img src="https://github.com/user-attachments/assets/30be571c-abb5-499b-8058-e20a4b1406c1" alt="NOGUEN BLOG REACT" style="width: 50px; margin-right: 10px;">
+    <span style="font-size: 20px;">9편: 리팩토링과 총 점검</span>
+  </a>
+</div>
+
+---
+
+## 후반 : 개발
