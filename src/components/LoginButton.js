@@ -6,6 +6,17 @@ import { ReactComponent as DilemmaIcon } from "../assets/dilemma_icon.svg";
 import { ReactComponent as KakaoIcon } from "../assets/kakaotalk.svg";
 import { ReactComponent as GoogleIcon } from "../assets/google.svg";
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
+
 const StyledLoginButton = styled.button`
   background-color: ${theme.color.transparent};
   color: ${theme.color.primary};
@@ -37,7 +48,7 @@ const StyledModalContainer = styled.div`
   background-color: ${theme.color.darkgray};
   border-radius: ${theme.radius.radiusMd};
   position: relative;
-  
+  animation: ${fadeIn} 0.3s ease-in-out;
 `;
 
 const StyledLogo = styled.div`
