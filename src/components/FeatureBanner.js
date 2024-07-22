@@ -32,59 +32,34 @@ const StyledFeatureTitle = styled.div`
   color: ${theme.color.black};
 `;
 
-function dointerval(intervalRef, setIsAnimating, setCurrentIndex, slidesWithLoop) {
-  intervalRef.current = setInterval(() => {
-    setIsAnimating(true);
-    setCurrentIndex((prevIndex) => {
-      const newIndex = prevIndex + 1;
-
-      if (newIndex == slidesWithLoop.length) {
-        setIsAnimating(false);
-        setCurrentIndex(0);
-        clearInterval(intervalRef.current);
-        return 0;
-      }
-      return newIndex;
-    });
-  }, 500);
-}
-
 function FeatureBanner({ slides }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(true);
-  const intervalRef = useRef(null);
-  const slidesWithLoop = [...slides, slides[0]];
-  var flag = false;
+  const [loopSlides, setLoopSlides] = useState([...slides]);
+  const initialSlidesLength = loopSlides.length;
+  const interval = 3000;
 
   useEffect(() => {
-    const cleanup = () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-
-    intervalRef.current = setInterval(() => {
-      setIsAnimating(true);
-      setCurrentIndex((prevIndex) => {
-        const newIndex = prevIndex + 1;
-
-        if (newIndex === slidesWithLoop.length) {
-          setIsAnimating(false);
+    const intervalId = setInterval(() => {
+      setLoopSlides((prevLoopSlides) => {
+        const newLoopSlides = [...prevLoopSlides, loopSlides[currentIndex]];
+        setCurrentIndex(currentIndex + 1);
+        if (currentIndex === initialSlidesLength) {
           setCurrentIndex(0);
-          flag = true;
-          return 0;
+          return newLoopSlides.splice(0, initialSlidesLength);
         }
-        return newIndex;
-      });
-    }, 1000); 
+        return newLoopSlides;
+      })
+    }, interval);
 
-    return cleanup;
-  }, []);
+    return () => clearInterval(intervalId);
+  }, [currentIndex]);
+
 
   return (
     <StyledSlideshowContainer>
       <StyledSlideshowWrapper currentIndex={currentIndex} isAnimating={isAnimating}>
-        {slidesWithLoop.map((slide, index) => (
+        {loopSlides.map((slide, index) => (
           <StyledSlide
             key={index}
             style={{ backgroundColor: slide.color }}
@@ -97,7 +72,6 @@ function FeatureBanner({ slides }) {
   );
 }
 
-// Example usage of FeatureBanner
 const slides = [
   { title: "슬라이드 1", color: theme.color.darkgray },
   { title: "슬라이드 2", color: theme.color.primary },
