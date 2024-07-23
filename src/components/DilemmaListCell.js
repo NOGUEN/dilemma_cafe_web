@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { theme } from "./ui/Theme";
+import { useNavigate } from 'react-router-dom';
 
 const StyledListCell = styled.button`
   background: ${theme.color.darkgray};
@@ -37,7 +38,6 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  
 `;
 
 function TitleText({titleText}) {
@@ -81,8 +81,14 @@ function Wrapper({titleText, likeCount, participationCount}) {
 }
 
 function DilemmaListCell({titleText, likeCount, participationCount}) {
+  const navigate = useNavigate();
+
+  const onClickImg = () => {
+    navigate("/dilemma");
+  };
+
   return (
-    <StyledListCell>
+    <StyledListCell onClick={onClickImg}>
       <Wrapper titleText={titleText} likeCount={likeCount} participationCount={participationCount}></Wrapper>
     </StyledListCell>
   );

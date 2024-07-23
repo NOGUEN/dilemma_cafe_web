@@ -39,6 +39,11 @@ export const theme = {
   page: {
     maxWidth: "1000px",
   },
+  height: {
+    navbar: "6rem",
+    button: "6rem",
+    squareButton: "15rem",
+  },
   space: {
     spacePage: "5.2rem",
     space3Xl: "3rem",

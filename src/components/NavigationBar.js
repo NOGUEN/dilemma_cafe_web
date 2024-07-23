@@ -6,7 +6,7 @@ import LoginButton from "./LoginButton.js";
 
 const StyledWrap = styled.div`
   margin: 0;
-  padding-top: 60px;
+  padding-top: ${theme.height.navbar};
 `;
 
 const StyledNavigationBar = styled.div`

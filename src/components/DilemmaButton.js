@@ -2,12 +2,15 @@ import styled from "styled-components";
 import { theme } from "./ui/Theme";
 
 const StyledDillemButton = styled.button`
-  ${theme.fontstyle.subhead1}
-  border-radius: ${theme.radius.radiusMd};
+  ${theme.fontstyle.display}
+  border-radius: ${theme.radius.radiusLg};
   background-color: ${theme.color.primary};
+  height: ${theme.height.button};
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
+  border: none;
 `
 
 function DilemmaButton({ buttonTitleText }) {
