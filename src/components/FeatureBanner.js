@@ -34,10 +34,10 @@ const StyledFeatureTitle = styled.div`
 
 function FeatureBanner({ slides }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [loopSlides, setLoopSlides] = useState([...slides, slides[0]]);
+  const [loopSlides] = useState([...slides, slides[0]]);
   const [isAnimating, setIsAnimating] = useState(true);
   const initialSlidesLength = slides.length;
-  const interval = 1000;
+  const interval = 3000;
 
   const currentIndexRef = useRef(currentIndex);
   currentIndexRef.current = currentIndex;
@@ -56,7 +56,6 @@ function FeatureBanner({ slides }) {
       setTimeout(() => {
         setIsAnimating(false);
         setCurrentIndex(0);
-        setLoopSlides([...slides, slides[0]]);
       }, 500);
     }
   }, [currentIndex, initialSlidesLength, slides]);
