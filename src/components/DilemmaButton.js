@@ -13,9 +13,9 @@ const StyledDillemButton = styled.button`
   border: none;
 `
 
-function DilemmaButton({ buttonTitleText }) {
+function DilemmaButton({ buttonTitleText, onClick }) {
   return (
-    <StyledDillemButton>
+    <StyledDillemButton onClick={onClick}>
       {buttonTitleText}
     </StyledDillemButton>
   );

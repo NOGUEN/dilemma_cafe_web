@@ -21,6 +21,8 @@ export const theme = {
     transparent: "transparent",
   },
   fontstyle: {
+    display3: "font-size: 2.6rem; font-family: \"JalnanGothic\";",
+    display2: "font-size: 2.2rem; font-family: \"JalnanGothic\";", 
     display: "font-size: 1.8rem; font-family: \"JalnanGothic\";",
     subhead3: "font-size: 1.6rem; font-family: \"JalnanGothic\";",
     subhead2: "font-size: 1.4rem; font-family: \"JalnanGothic\";",
@@ -40,8 +42,17 @@ export const theme = {
     maxWidth: "1000px",
   },
   height: {
+    height3Xl: "20rem",
+    height2Xl: "15rem",
+    heightXl: "10rem",
+    heightLg: "8rem",
+    heightMd: "6rem",
+    heightSm: "3rem",
+    heightXs: "2rem",
+    lineHeight: "0.1rem",
     navbar: "6rem",
     button: "6rem",
+    inputField: "8rem",
     squareButton: "15rem",
   },
   space: {

@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { useSpring, animated } from '@react-spring/web';  // animated import 추가
 import { theme } from "./ui/Theme";
 import { useNavigate } from 'react-router-dom';
 
-const StyledListCell = styled.button`
+const StyledListCell = styled(animated.button)`  // animated.button으로 변경
   background: ${theme.color.darkgray};
   border-radius: ${theme.radius.radiusMd};
   margin-bottom: ${theme.space.spaceMd};
@@ -80,15 +81,24 @@ function Wrapper({titleText, likeCount, participationCount}) {
   );
 }
 
-function DilemmaListCell({titleText, likeCount, participationCount}) {
+function DilemmaListCell({titleText, likeCount, participationCount, dilemmaId, index}) {
   const navigate = useNavigate();
 
-  const onClickImg = () => {
-    navigate("/dilemma");
+  // 애니메이션 설정
+  const springProps = useSpring({
+    opacity: 1,
+    transform: 'translateY(0)',
+    from: { opacity: 0, transform: 'translateY(-20px)' },
+    config: { tension: 200, friction: 20 },
+    delay: index * 100,
+  });
+
+  const onClick = () => {
+    navigate("/dilemma", { state: { dilemmaId } });
   };
 
   return (
-    <StyledListCell onClick={onClickImg}>
+    <StyledListCell onClick={onClick} style={springProps}>
       <Wrapper titleText={titleText} likeCount={likeCount} participationCount={participationCount}></Wrapper>
     </StyledListCell>
   );

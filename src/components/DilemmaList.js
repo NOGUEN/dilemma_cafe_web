@@ -17,11 +17,13 @@ function DilemmaList ({data}) {
       <>
         {data.map((item, index) => (
           <DilemmaListCell 
-            key={index} 
-            titleText={item.titleText} 
-            likeCount={item.likeCount}
-            participationCount={item.participationCount}>  
-          </DilemmaListCell>
+            key={item.dilemma_id}
+            titleText={item.title} 
+            likeCount={item.like}
+            participationCount={item.total_votes}
+            dilemmaId={item.dilemma_id}
+            index={index}
+          />
         ))}
       </>
     </>

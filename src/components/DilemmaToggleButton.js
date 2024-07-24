@@ -4,14 +4,16 @@ import { theme } from "./ui/Theme";
 const StyledButton = styled.button`
   ${theme.fontstyle.display}
   background-color: ${theme.color.gray};
-  height: 30rem;
+  height: 40vh;
   width: 100%;
   display: flex;
   align-items: center;
   cursor: ponter;
   border-radius: ${theme.radius.radiusXl};
-  border: ${({ isToggled }) =>
-    isToggled ? theme.space.spaceSm + " solid " + theme.color.primary : "none"};
+  border: none;
+  box-shadow: ${props => props.istoggle ? `0 0 0 ${theme.space.spaceSm} ${theme.color.primary} inset;` : "none;"}
+  
+  transition: all 0.5s;
 `;
 
 const StyledButtonContainer = styled.div`
@@ -22,8 +24,8 @@ const StyledButtonContainer = styled.div`
 export default function DilemmaToggleButton({ isToggle, onClick}) {
   return (
     <StyledButtonContainer>
-      <StyledButton isToggled={isToggle[0]} onClick={() => {onClick(0)}}></StyledButton>
-      <StyledButton isToggled={isToggle[1]} onClick={() => {onClick(1)}}></StyledButton>
+      <StyledButton istoggle={isToggle[0] ? 1 : 0} onClick={() => {onClick(0)}}></StyledButton>
+      <StyledButton istoggle={isToggle[1] ? 1 : 0} onClick={() => {onClick(1)}}></StyledButton>
     </StyledButtonContainer>
     
   );
