@@ -36,9 +36,9 @@ function MainPage() {
 
   return (
     <>
-      <NavigationBar data={getNavBarData()}></NavigationBar>
-      <ButtonContainer data={buttonsData}></ButtonContainer>
-      <DilemmaList data={data}></DilemmaList>
+      <NavigationBar data={getNavBarData()} />
+      <ButtonContainer data={buttonsData} /> 
+      <DilemmaList listTitle="인기 딜레마!" data={data} />
     </>
   );
 }

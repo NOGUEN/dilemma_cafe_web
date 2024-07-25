@@ -80,6 +80,10 @@ function DilemmaPage() {
     setIsToggle([index === 0, index === 1]);
   }
 
+  function isAvailable() {
+    return isToggle.includes(true);
+  }
+
   return (
     <PageWrapper>
       <NavigationBar data={getNavBarData()} />
@@ -89,7 +93,7 @@ function DilemmaPage() {
       )}
       <DilemmaToggleButton isVisible={isVisible} animationDelay={0.4} data={toggleButtonData} />
       <DilemmaInputField isVisible={isVisible} animationDelay={0.6} />
-      <DilemmaButton isVisible={isVisible} animationDelay={0.8} buttonTitleText={"투표"} onClick={() => {}} />
+      <DilemmaButton isVisible={isVisible} animationDelay={0.8} buttonTitleText={"투표"} available={isAvailable()} onClick={() => {}} />
     </PageWrapper>
   );
 }

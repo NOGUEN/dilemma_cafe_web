@@ -6,13 +6,15 @@ const StyledTitle = styled.div`
   color: white;
   ${theme.fontstyle.subhead3}
   margin: ${theme.space.spaceLg} ${theme.space.spaceZero};
+  display: flex;
+  flex-direction: column;
 `;
 
-function DilemmaList ({data}) {
+function DilemmaList ({listTitle, data}) {
   return (
     <>
       <StyledTitle>
-        인기 딜레마
+        {listTitle}
       </StyledTitle>
       <>
         {data.map((item, index) => (

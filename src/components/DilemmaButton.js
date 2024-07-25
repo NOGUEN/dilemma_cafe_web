@@ -15,7 +15,7 @@ const fadeInAndMoveUp = keyframes`
 const StyledDillemButton = styled.button`
   ${theme.fontstyle.display}
   border-radius: ${theme.radius.radiusLg};
-  background-color: ${theme.color.primary};
+  background-color: ${props => props.available ? theme.color.primary : theme.color.gray800 };
   height: ${theme.height.button};
   animation: ${css`${fadeInAndMoveUp} 1s ease-out ${props => props.animationDelay || 0 }s forwards`};
   opacity: ${props => props.isVisible ? 1 : 0};
@@ -27,9 +27,9 @@ const StyledDillemButton = styled.button`
   cursor: ponter;
 `
 
-function DilemmaButton({ buttonTitleText, onClick, animationDelay }) {
+function DilemmaButton({ buttonTitleText, onClick, animationDelay, available }) {
   return (
-    <StyledDillemButton animationDelay={animationDelay} onClick={onClick}>
+    <StyledDillemButton animationDelay={animationDelay} onClick={onClick} available={available}>
       {buttonTitleText}
     </StyledDillemButton>
   );
