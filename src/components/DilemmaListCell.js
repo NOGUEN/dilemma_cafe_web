@@ -3,7 +3,7 @@ import { useSpring, animated } from '@react-spring/web';  // animated import 추
 import { theme } from "./ui/Theme";
 import { useNavigate } from 'react-router-dom';
 
-const StyledListCell = styled(animated.button)`  // animated.button으로 변경
+const StyledListCell = styled(animated.button)`
   background: ${theme.color.darkgray};
   border-radius: ${theme.radius.radiusMd};
   margin-bottom: ${theme.space.spaceMd};
@@ -84,7 +84,6 @@ function Wrapper({titleText, likeCount, participationCount}) {
 function DilemmaListCell({titleText, likeCount, participationCount, dilemmaId, index}) {
   const navigate = useNavigate();
 
-  // 애니메이션 설정
   const springProps = useSpring({
     opacity: 1,
     transform: 'translateY(0)',
@@ -94,7 +93,7 @@ function DilemmaListCell({titleText, likeCount, participationCount, dilemmaId, i
   });
 
   const onClick = () => {
-    navigate("/dilemma", { state: { dilemmaId } });
+    navigate(`/dilemma/${dilemmaId}`);
   };
 
   return (

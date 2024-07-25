@@ -1,5 +1,16 @@
-import styled from "styled-components";
+import styled, { keyframes, css } from 'styled-components';
 import { theme } from "./ui/Theme";
+
+const fadeInAndMoveUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(${theme.space.spaceMd});
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 const StyledContainer = styled.div`
   background-color: ${theme.color.gray900};
@@ -7,7 +18,9 @@ const StyledContainer = styled.div`
   box-sizing: border-box;
   border-radius: ${theme.radius.radiusMd};
   gap: ${theme.space.spaceLg};
-  padding: ${theme.space.spaceLg}
+  padding: ${theme.space.spaceLg};
+  animation: ${css`${fadeInAndMoveUp} 1s ease-out ${props => props.animationDelay || 0 }s forwards`};
+  opacity: ${props => props.isVisible ? 1 : 0};
 `;
 
 const StlyedTitle = styled.div`
@@ -20,9 +33,9 @@ const StlyedDescription = styled.div`
   color: ${theme.color.white};
 `;
 
-function DilemmaDescription({ text }) {
+function DilemmaDescription({ text, animationDelay }) {
   return (
-    <StyledContainer>
+    <StyledContainer animationDelay={animationDelay}>
       <StlyedTitle>
         상황
       </StlyedTitle>

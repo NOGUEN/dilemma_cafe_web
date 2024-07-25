@@ -42,6 +42,7 @@ export const theme = {
     maxWidth: "1000px",
   },
   height: {
+    height4Xl: "25rem",
     height3Xl: "20rem",
     height2Xl: "15rem",
     heightXl: "10rem",
