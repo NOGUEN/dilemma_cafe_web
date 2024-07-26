@@ -10,7 +10,9 @@ const StyledTitle = styled.div`
   flex-direction: column;
 `;
 
-function DilemmaList ({listTitle, data}) {
+function DilemmaList({ listTitle, data }) {
+  console.log(data);
+
   return (
     <>
       <StyledTitle>

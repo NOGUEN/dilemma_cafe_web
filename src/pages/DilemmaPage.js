@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
-import styled, { keyframes, css } from 'styled-components';
+import React, { useState } from 'react';
+import { useParams, useLocation } from 'react-router-dom';
+import styled from 'styled-components';
 import DilemmaToggleButton from "../components/DilemmaToggleButton";
 import NavigationBar from "../components/NavigationBar";
 import getNavBarData from "../constants/NavBarData";
@@ -9,17 +8,8 @@ import DilemmaButton from "../components/DilemmaButton";
 import DilemmaInputField from "../components/InputField";
 import DilemmaDescription from "../components/DilemmaDescription";
 import { theme } from "../components/ui/Theme";
-
-const fadeInAndMoveUp = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(${theme.space.spaceMd});
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
+import useFetchDilemma from '../hooks/useFetchDilemma';
+import BlinkingText from '../components/BlinkingText';
 
 const PageWrapper = styled.div`
   display: flex;
@@ -31,15 +21,14 @@ const PageWrapper = styled.div`
 const StyledTitle = styled.div`
   ${theme.fontstyle.display3}
   color: ${theme.color.white};
-  animation: ${css`${fadeInAndMoveUp} 1s ease-out 0s forwards`};
 `;
-
 
 function DilemmaPage() {
   const { dilemmaId } = useParams();
+  const { data: dilemma, loading, error, isVisible } = useFetchDilemma(dilemmaId);
   const [isToggle, setIsToggle] = useState([false, false]);
-  const [dilemma, setDilemma] = useState(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const location = useLocation();
+  const { titleText } = location.state || {};
 
   const toggleButtonData = [
     {
@@ -54,28 +43,6 @@ function DilemmaPage() {
     },
   ];
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await axios.get(
-          `https://cfqdnaomjctsvpoczwcm.supabase.co/rest/v1/rpc/get_dilemma_by_id?input_dilemma_id=${dilemmaId}`,
-          {
-            headers: {
-              apikey: process.env.REACT_APP_API_KEY,
-              Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
-            }
-          }
-        );
-        setDilemma(res.data[0]);
-        setIsVisible(true);
-      } catch (error) {
-        console.error('Error fetching dilemma:', error.response.data);
-      }
-    };
-
-    fetchData();
-  }, [dilemmaId]);
-
   function onClickFunction(index) {
     setIsToggle([index === 0, index === 1]);
   }
@@ -84,16 +51,27 @@ function DilemmaPage() {
     return isToggle.includes(true);
   }
 
+  if (loading)
+    return (
+      <PageWrapper>
+        <NavigationBar data={getNavBarData()} />
+        <BlinkingText text={titleText} />
+      </PageWrapper>
+    );
+  if (error) return <p>Error loading data</p>;
+
   return (
     <PageWrapper>
       <NavigationBar data={getNavBarData()} />
-      <StyledTitle isVisible={isVisible}> {dilemma ? dilemma.title : ""} </StyledTitle>
       {dilemma && (
-        <DilemmaDescription isVisible={isVisible} text={dilemma.description} animationDelay={0.2}/>
+        <>
+          <StyledTitle isVisible={isVisible} text={dilemma.title}>{dilemma.title}</StyledTitle>
+          <DilemmaDescription isVisible={isVisible} text={dilemma.description} animationDelay={0.2} />
+          <DilemmaToggleButton isVisible={isVisible} animationDelay={0.4} data={toggleButtonData} />
+          <DilemmaInputField isVisible={isVisible} animationDelay={0.6} />
+          <DilemmaButton isVisible={isVisible} animationDelay={0.8} buttonTitleText={"투표"} available={isAvailable()} onClick={() => {}} />
+        </>
       )}
-      <DilemmaToggleButton isVisible={isVisible} animationDelay={0.4} data={toggleButtonData} />
-      <DilemmaInputField isVisible={isVisible} animationDelay={0.6} />
-      <DilemmaButton isVisible={isVisible} animationDelay={0.8} buttonTitleText={"투표"} available={isAvailable()} onClick={() => {}} />
     </PageWrapper>
   );
 }

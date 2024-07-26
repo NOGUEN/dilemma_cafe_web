@@ -11,9 +11,8 @@ const StyledSlideshowContainer = styled.div`
 
 const StyledSlideshowWrapper = styled.div`
   display: flex;
-  transition: ${({ isAnimating }) =>
-    isAnimating ? "transform 0.5s ease-in-out" : "none"};
-  transform: translateX(${({ currentIndex }) => -currentIndex * 100}%);
+  transition: ${({ isAnimating }) => (isAnimating ? "transform 0.5s ease-in-out" : "none")};
+  transform: ${({ currentIndex }) => `translateX(-${currentIndex * 100}%)`};
 `;
 
 const StyledSlide = styled.div`
@@ -62,12 +61,18 @@ function FeatureBanner({ slides }) {
 
   return (
     <StyledSlideshowContainer>
-      <StyledSlideshowWrapper currentIndex={currentIndex} isAnimating={isAnimating}>
+      <StyledSlideshowWrapper
+        style={{
+          transform: `translateX(-${currentIndex * 100}%)`,
+          transition: isAnimating ? "transform 0.5s ease-in-out" : "none",
+        }}
+      >
         {loopSlides.map((slide, index) => (
           <StyledSlide
             key={index}
             style={{ backgroundColor: slide.color }}
-            onClick={() => alert(`Slide ${index + 1} clicked!`)}>
+            onClick={() => alert(`Slide ${index + 1} clicked!`)}
+          >
             <StyledFeatureTitle>{slide.title}</StyledFeatureTitle>
           </StyledSlide>
         ))}

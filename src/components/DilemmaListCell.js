@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useSpring, animated } from '@react-spring/web';  // animated import 추가
+import { useSpring, animated } from '@react-spring/web'; 
 import { theme } from "./ui/Theme";
 import { useNavigate } from 'react-router-dom';
 
@@ -41,7 +41,7 @@ const StyledWrapper = styled.div`
   align-items: start;
 `;
 
-function TitleText({titleText}) {
+function TitleText({ titleText }) {
   return (
     <StyledTitle>
       {titleText}
@@ -49,7 +49,7 @@ function TitleText({titleText}) {
   );
 }
 
-function Like({likeCount}) {
+function Like({ likeCount }) {
   return (
     <StyledLike>
       ❤️ {likeCount}
@@ -57,13 +57,13 @@ function Like({likeCount}) {
   );
 }
 
-function Participations({participationCount}) {
+function Participations({ participationCount }) {
   return (
     <StyledParticipations>{participationCount}명 참여</StyledParticipations>
-  )
+  );
 }
 
-function InfoWrapper({likeCount, participationCount}) {
+function InfoWrapper({ likeCount, participationCount }) {
   return (
     <StyledInfoWrapper>
       <Like likeCount={likeCount}></Like>
@@ -72,7 +72,7 @@ function InfoWrapper({likeCount, participationCount}) {
   );
 }
 
-function Wrapper({titleText, likeCount, participationCount}) {
+function Wrapper({ titleText, likeCount, participationCount }) {
   return (
     <StyledWrapper>
       <TitleText titleText={titleText}></TitleText>
@@ -81,7 +81,7 @@ function Wrapper({titleText, likeCount, participationCount}) {
   );
 }
 
-function DilemmaListCell({titleText, likeCount, participationCount, dilemmaId, index}) {
+function DilemmaListCell({ titleText, likeCount, participationCount, dilemmaId, index }) {
   const navigate = useNavigate();
 
   const springProps = useSpring({
@@ -93,7 +93,7 @@ function DilemmaListCell({titleText, likeCount, participationCount, dilemmaId, i
   });
 
   const onClick = () => {
-    navigate(`/dilemma/${dilemmaId}`);
+    navigate(`/dilemma/${dilemmaId}`, { state: { titleText: titleText } });
   };
 
   return (

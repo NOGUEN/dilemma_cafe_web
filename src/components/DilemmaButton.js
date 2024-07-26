@@ -24,6 +24,7 @@ const StyledDillemButton = styled.button`
   align-items: center;
   justify-content: center;
   border: none;
+  transition: all 0.5s;
   cursor: ponter;
 `
 

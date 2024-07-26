@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import axios from 'axios';
 import DilemmaList from "../components/DilemmaList";
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import getNavBarData from "../constants/NavBarData";
 import NavigationBar from "../components/NavigationBar";
+import useFetchDilemmaList from "../hooks/useFetchDilemmaList";
+import DilemmaMenuToggle from "../components/DilemmaMenuToggle";
 
 const ListWrapper = styled.div`
   display: box;
@@ -11,24 +12,11 @@ const ListWrapper = styled.div`
   gap: 20px;
 `;
 
-
-
 function DilemmaListPage() {
-  const [data, setData] = useState([]);
+  const { data, loading, error } = useFetchDilemmaList();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await axios.get("https://cfqdnaomjctsvpoczwcm.supabase.co/rest/v1/Dilemma", {
-        headers: {
-          apikey: process.env.REACT_APP_API_KEY,
-          Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
-        },
-      });
-      return res.data;
-    }
-
-    fetchData().then(res => setData(res));
-  }, []);
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error loading data</p>;
 
   return (
     <>
