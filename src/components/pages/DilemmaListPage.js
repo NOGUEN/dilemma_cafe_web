@@ -1,10 +1,9 @@
 import styled from "styled-components";
-import DilemmaList from "../components/DilemmaList";
+import DilemmaList from "../blocks/DilemmaList";
 import React from 'react';
-import getNavBarData from "../constants/NavBarData";
-import NavigationBar from "../components/NavigationBar";
-import useFetchDilemmaList from "../hooks/useFetchDilemmaList";
-import DilemmaMenuToggle from "../components/DilemmaMenuToggle";
+import getNavBarData from "../../constants/NavBarData";
+import NavigationBar from "../blocks/NavigationBar";
+import useFetchDilemmaList from "../../hooks/useFetchDilemmaList";
 
 const ListWrapper = styled.div`
   display: box;

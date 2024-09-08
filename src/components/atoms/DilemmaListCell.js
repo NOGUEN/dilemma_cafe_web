@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useSpring, animated } from '@react-spring/web'; 
-import { theme } from "./ui/Theme";
+import { theme } from "../ui/Theme";
 import { useNavigate } from 'react-router-dom';
 
 const StyledListCell = styled(animated.button)`

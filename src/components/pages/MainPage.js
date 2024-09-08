@@ -1,8 +1,8 @@
-import NavigationBar from "../components/NavigationBar";
-import ButtonContainer from "../components/SquareButtonContainer";
-import DilemmaList from "../components/DilemmaList";
-import getNavBarData from "../constants/NavBarData";
-import useFetchDilemmaList from "../hooks/useFetchDilemmaList";
+import NavigationBar from "../blocks/NavigationBar";
+import ButtonContainer from "../blocks/SquareButtonContainer";
+import DilemmaList from "../blocks/DilemmaList";
+import getNavBarData from "../../constants/NavBarData";
+import useFetchDilemmaList from "../../hooks/useFetchDilemmaList";
 
 
 function MainPage() {

@@ -1,6 +1,6 @@
-import DilemmaPage from "../pages/DilemmaPage";
-import MainPage from "../pages/MainPage";
-import DilemmaListPage from "../pages/DilemmaListPage";
+import DilemmaPage from "../components/pages/DilemmaPage";
+import MainPage from "../components/pages/MainPage";
+import DilemmaListPage from "../components/pages/DilemmaListPage";
 
 const RoutePaths = [
   { title: "홈", href: "/", page: <MainPage />, isNavItem: false },

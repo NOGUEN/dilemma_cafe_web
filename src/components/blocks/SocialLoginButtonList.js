@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import SocialLoginButton from "./SocialLoginButton";
-import { theme } from "./ui/Theme";
+import SocialLoginButton from "../atoms/SocialLoginButton";
+import { theme } from "../ui/Theme";
 
 const StyledSocialLoginButtonList = styled.div`
   display: flex;

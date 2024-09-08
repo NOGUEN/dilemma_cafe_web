@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "./ui/Theme.js";
-import NavbarLogo from "./NavbarLogo.js";
+import { theme } from "../ui/Theme.js";
+import NavbarLogo from "../atoms/NavbarLogo.js";
 import LoginButton from "./LoginButton.js";
 
 const StyledWrap = styled.div`

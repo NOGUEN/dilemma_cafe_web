@@ -1,10 +1,10 @@
 import styled, { keyframes } from "styled-components";
 import React, { useState } from 'react';
 import SocialLoginButtonList from "./SocialLoginButtonList";
-import { theme } from "./ui/Theme";
-import { ReactComponent as DilemmaIcon } from "../assets/dilemma_icon.svg";
-import { ReactComponent as KakaoIcon } from "../assets/kakaotalk.svg";
-import { ReactComponent as GoogleIcon } from "../assets/google.svg";
+import { theme } from "../ui/Theme";
+import { ReactComponent as DilemmaIcon } from "../../assets/dilemma_icon.svg";
+import { ReactComponent as KakaoIcon } from "../../assets/kakaotalk.svg";
+import { ReactComponent as GoogleIcon } from "../../assets/google.svg";
 
 const fadeIn = keyframes`
   from {

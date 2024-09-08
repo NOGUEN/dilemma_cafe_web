@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "./ui/Theme.js";
-import SquareButton from "./SqureButton.js";
+import { theme } from "../ui/Theme.js";
+import SquareButton from "../atoms/SqureButton.js";
 import FeatureBanner from "./FeatureBanner.js";
-import { ReactComponent as DilemmaIcon } from "../assets/dilemma_icon.svg";
-import { ReactComponent as DilemmaListIcon } from "../assets/dilemma_list_icon.svg";
+import { ReactComponent as DilemmaIcon } from "../../assets/dilemma_icon.svg";
+import { ReactComponent as DilemmaListIcon } from "../../assets/dilemma_list_icon.svg";
 import { useNavigate } from "react-router-dom";
 
 

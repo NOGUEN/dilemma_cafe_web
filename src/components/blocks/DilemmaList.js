@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import DilemmaListCell from "./DilemmaListCell";
-import { theme } from "./ui/Theme";
+import DilemmaListCell from "../atoms/DilemmaListCell";
+import { theme } from "../ui/Theme";
 
 const StyledTitle = styled.div`
   color: white;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { theme } from './ui/Theme';
+import { theme } from '../ui/Theme';
 
 const blink = keyframes`
   0% {

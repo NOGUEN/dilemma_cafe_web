@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { theme } from "./ui/Theme";
+import { theme } from "../ui/Theme";
 
 const StyledSocialLoginButton = styled.button`
   background-color: ${props => props.color || theme.color.primary};

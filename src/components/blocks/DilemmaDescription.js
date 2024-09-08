@@ -1,5 +1,6 @@
 import styled, { keyframes, css } from 'styled-components';
-import { theme } from "./ui/Theme";
+import { theme } from "../ui/Theme";
+import TitleText from '../atoms/TitleText';
 
 const fadeInAndMoveUp = keyframes`
   from {
@@ -23,11 +24,6 @@ const StyledContainer = styled.div`
   opacity: ${props => props.isVisible ? 1 : 0};
 `;
 
-const StlyedTitle = styled.div`
-  ${theme.fontstyle.display3}
-  color: ${theme.color.primary};
-`;
-
 const StlyedDescription = styled.div`
   ${theme.fontstyle.body2Medium}
   color: ${theme.color.white};
@@ -36,9 +32,7 @@ const StlyedDescription = styled.div`
 function DilemmaDescription({ text, animationDelay }) {
   return (
     <StyledContainer animationDelay={animationDelay}>
-      <StlyedTitle>
-        상황
-      </StlyedTitle>
+      <TitleText text={text} />
       <StlyedDescription>
         {text}
       </StlyedDescription>

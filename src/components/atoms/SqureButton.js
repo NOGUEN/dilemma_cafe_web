@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "./ui/Theme.js";
+import { theme } from "../ui/Theme.js";
 
 const StyledSquareButton = styled.button`
   padding: ${theme.space.spaceLg} ${theme.space.spaceXl};

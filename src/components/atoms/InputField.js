@@ -1,5 +1,5 @@
 import styled, { keyframes, css } from 'styled-components';
-import { theme } from "./ui/Theme";
+import { theme } from "../ui/Theme";
 
 const fadeInAndMoveUp = keyframes`
   from {

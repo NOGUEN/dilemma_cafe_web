@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-import DilemmaToggleButton from "../components/DilemmaToggleButton";
-import NavigationBar from "../components/NavigationBar";
-import getNavBarData from "../constants/NavBarData";
-import DilemmaButton from "../components/DilemmaButton";
-import DilemmaInputField from "../components/InputField";
-import DilemmaDescription from "../components/DilemmaDescription";
-import { theme } from "../components/ui/Theme";
-import useFetchDilemma from '../hooks/useFetchDilemma';
-import BlinkingText from '../components/BlinkingText';
+import DilemmaToggleButton from "../blocks/DilemmaToggleButton";
+import NavigationBar from "../blocks/NavigationBar";
+import getNavBarData from "../../constants/NavBarData";
+import DilemmaButton from "../atoms/DilemmaButton";
+import DilemmaInputField from "../atoms/InputField";
+import DilemmaDescription from "../blocks/DilemmaDescription";
+import { theme } from "../ui/Theme";
+import useFetchDilemma from '../../hooks/useFetchDilemma';
+import BlinkingText from '../atoms/BlinkingText';
 
 const PageWrapper = styled.div`
   display: flex;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { theme } from "./ui/Theme";
+import { theme } from "../ui/Theme";
 import { useNavigate } from "react-router-dom";
 
 const StyledNavbarLogo = styled.div`
